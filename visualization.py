@@ -37,4 +37,4 @@ plt.legend()
 plt.grid(True)
 
 # 保存图形
-plt.savefig('kmeans.png')
+plt.savefig('kmeans.jpg')
