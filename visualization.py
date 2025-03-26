@@ -38,3 +38,6 @@ plt.grid(True)
 
 # 显示图形
 plt.show()
+
+# 保存图形
+plt.savefig('kmeans.png')
