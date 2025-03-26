@@ -117,7 +117,7 @@ int main()
         h_centroids[i] = static_cast<float>(rand()) / RAND_MAX;
 
     // 保存随机生成的初始数据点到文件
-    std::ofstream dataFile("initial_data_points.txt");
+    std::ofstream dataFile("log/initial_data_points.txt");
     for (int i = 0; i < NUM_POINTS; i++)
     {
         for (int d = 0; d < DIMENSIONS; d++)
@@ -129,7 +129,7 @@ int main()
     dataFile.close();
 
     // 保存初始簇中心到文件
-    std::ofstream centroidsFile("initial_centroids.txt");
+    std::ofstream centroidsFile("log/initial_centroids.txt");
     for (int c = 0; c < NUM_CLUSTERS; c++)
     {
         for (int d = 0; d < DIMENSIONS; d++)
@@ -170,7 +170,7 @@ int main()
     CUDA_CHECK(cudaMemcpy(h_clusterAssignments.data(), d_clusterAssignments, NUM_POINTS * sizeof(int), cudaMemcpyDeviceToHost));
 
     // 保存最终簇中心到文件
-    std::ofstream finalCentroidsFile("final_centroids.txt");
+    std::ofstream finalCentroidsFile("log/final_centroids.txt");
     for (int c = 0; c < NUM_CLUSTERS; c++)
     {
         for (int d = 0; d < DIMENSIONS; d++)
@@ -182,7 +182,7 @@ int main()
     finalCentroidsFile.close();
 
     // 保存每个点的簇分配结果到文件
-    std::ofstream clusterAssignmentsFile("cluster_assignments.txt");
+    std::ofstream clusterAssignmentsFile("log/cluster_assignments.txt");
     for (int i = 0; i < NUM_POINTS; i++)
     {
         clusterAssignmentsFile << h_clusterAssignments[i] << "\n";
