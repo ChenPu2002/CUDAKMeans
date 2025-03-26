@@ -1,2 +1,2 @@
 ### visualization
-![visualization](kmeans.jpg)
+![visualization](images/kmeans.jpg)
